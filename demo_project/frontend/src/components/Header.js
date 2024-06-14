@@ -1,57 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { AuthContext } from './AuthContext';
 import '../styles/Header.css';
 
 function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
+    const { username, role, logout } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
 
-  useEffect(() => {
-    const storedLogin = localStorage.getItem('isLoggedIn');
-    const storedUsername = localStorage.getItem('username');
-    if (storedLogin) {
-      setIsLoggedIn(true);
-      setUsername(storedUsername);
-    }
-  }, []);
+    const handleRegister = () => {
+        navigate('/register', { state: { from: location.pathname } });
+    };
 
-  const handleLogout = () => {
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('username');
-    setIsLoggedIn(false);
-    setUsername('');
-  };
-
-  return (
-    <header className="header">
-      <nav className="nav">
-        <ul className="nav-links">
-          <li>
-            <Link to="/home">Home</Link>
-          </li>
-          <li>
-            <Link to="#">Contest</Link>
-          </li>
-          <li>
-            <Link to="/problemset">Problem Set</Link>
-          </li>
-          <li>
-            <Link to="#">Blog</Link>
-          </li>
-        </ul>
-        <div className="login-section">
-          {isLoggedIn ? (
-            <div>
-              <span>Welcome, {username}</span>
-              <button onClick={handleLogout}>Logout</button>
-            </div>
-          ) : (
-            <Link to="/">Login</Link>
-          )}
+    return (
+        <div className="header-container">
+            <nav className="header-nav">
+                <ul className="header-nav-links">
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/contest">Contest</Link></li>
+                    <li><Link to="/problemset">Problem Set</Link></li>
+                    <li><Link to="/blog">Blog</Link></li>
+                </ul>
+                <div className="header-login-section">
+                    {username ? (
+                        <div className="header-user">
+                            <Link className="header-link" to={`/${role}/dashboard`}>{username}</Link>
+                            <span className="header-separator">|</span>
+                            <button className="header-link-button" onClick={logout}>Logout</button>
+                        </div>
+                    ) : (
+                        <div className="header-auth-buttons">
+                            <Link className="header-link" to="/login">Login</Link>
+                            <span className="header-separator">|</span>
+                            <button className="header-link-button" onClick={handleRegister}>Register</button>
+                        </div>
+                    )}
+                </div>
+            </nav>
         </div>
-      </nav>
-    </header>
-  );
+    );
 }
 
 export default Header;

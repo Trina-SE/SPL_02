@@ -1,0 +1,68 @@
+.submit-solution-modal {
+    background-color: #f2f2f2;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 40px;
+    width: 500px; 
+    height: 250px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.close-button {
+    background-color: red;
+    color: #fff;
+    border:none;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute; 
+    right: 0; 
+    top: 30%; 
+    transform: translateY(-50%); 
+    font-weight: 900; 
+    font-family: 'Verdana', sans-serif; 
+}
+
+.close-button:hover {
+    background-color: darkred;
+}
+
+.solution-input {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+    resize: none;
+    background-color: #fff; 
+    font-size: large;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: fit-content; 
+    position: absolute; 
+    bottom: 15px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    font-weight: bold;
+    font-family: 'Verdana', sans-serif; 
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}

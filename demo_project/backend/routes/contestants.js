@@ -1,45 +1,34 @@
 const express = require('express');
 const router = express.Router();
-const Contestant = require('../models/Contestant');
+const {
+    getAllContestants,
+    addNewContestant,
+    removeContestant,
+    updateContestant,
+    getContestantByUsername,
+    getContestantByEmail,
+    submitProblemSolution,
+    checkContestantExists,
+    updateContestantPassword // Import the new function
+} = require('../repositories/contestant_repo');
 
-// Route to get all contestants
-router.get('/', async (req, res) => {
-  try {
-    const contestants = await Contestant.find();
-    res.json(contestants);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+router.get('/', getAllContestants);
 
-// Route to add a new contestant
-router.post('/', async (req, res) => {
-  const { uid, username, password, email } = req.body;
+router.post('/add', addNewContestant);
 
-  try {
-    // Check if the username or email already exists
-    const existingContestant = await Contestant.findOne({
-      $or: [{ username }, { email }],
-    });
+router.delete('/remove/:username', removeContestant);
 
-    if (existingContestant) {
-      return res.status(400).json({ error: 'Username or email already exists' });
-    }
+router.put('/update/:username', updateContestant);
 
-    // Create a new contestant
-    const newContestant = new Contestant({
-      uid,
-      username,
-      password,
-      email,
-    });
+router.get('/username/:username', getContestantByUsername);
 
-    // Save the new contestant
-    const savedContestant = await newContestant.save();
-    res.json(savedContestant);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+router.get('/email/:email', getContestantByEmail);
+
+router.post('/submit/:username', submitProblemSolution);
+
+router.get('/contestantExist/:username', checkContestantExists);
+
+// Add the new route for updating password
+router.post('/change-password/:username', updateContestantPassword);
 
 module.exports = router;

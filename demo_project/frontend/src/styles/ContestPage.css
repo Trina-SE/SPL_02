@@ -1,0 +1,113 @@
+.contest-page-container {
+    padding: 20px;
+}
+
+.contest-page-container .contest-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contest-page-container .contest-page-tabs {
+    display: flex;
+}
+
+.contest-page-container .contest-page-tab {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.contest-page-container .contest-page-tab.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.contest-page-container .contest-page-search {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.contest-page-container .contest-page-search input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.contest-page-container .contest-create-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contest-page-container .contest-create-button button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contest-page-container .contest-create-button button:hover {
+    background-color: #024d9c;
+}
+
+.contest-page-container .contest-page-list {
+    overflow-x: auto;
+}
+
+.contest-page-container .contest-page-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.contest-page-container .contest-page-list th, .contest-page-list td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.contest-page-container .contest-page-list th {
+    background-color: #f5f5f5;
+}
+
+.contest-page-container .contest-page-list tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-size: 16px;
+    font-weight: bold;
+}

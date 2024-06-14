@@ -1,36 +1,98 @@
-.header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-  }
-  
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-links {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  .nav-links li {
-    margin-right: 20px;
-  }
-  
-  .nav-links li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .login-section a,
-  .login-section button {
-    color: #fff;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 5px 10px;
-  }
+.header-container {
+	background-color: #ffffff;
+	padding: 10px 0;
+	border-bottom: 1px solid #eaeaea;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	font-family: Arial, sans-serif;
+}
+
+.header-container .header-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.header-container .header-nav-links {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+.header-container .header-nav-links li {
+	margin-right: 20px;
+}
+
+.header-container .header-nav-links li a {
+	text-decoration: none;
+	color: #000000;
+	font-size: 16px;
+	padding: 5px 10px;
+	background-color: #f0f0f0;
+	border-radius: 5px;
+}
+
+.header-container .header-nav-links li a:hover {
+	background-color: #e0e0e0;
+}
+
+.header-container .header-login-section {
+	display: flex;
+	align-items: center;
+}
+
+.header-container .header-user {
+	display: flex;
+	align-items: center;
+}
+
+.header-container .header-link {
+	color: #007bff;
+	cursor: pointer;
+	font-size: 16px;
+	text-decoration: none;
+	padding: 0 5px;
+}
+
+.header-container .header-link:hover {
+	text-decoration: underline;
+}
+
+.header-container .header-link-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	/* padding: 0; */
+
+	color: #007bff;
+	cursor: pointer;
+	font-size: 16px;
+	text-decoration: none;
+	padding: 0 5px;
+}
+
+.header-container .header-link-button:hover {
+	text-decoration: underline;
+}
+
+.header-auth-buttons {
+	display: flex;
+	align-items: center;
+}
+
+.header-auth-buttons .header-link {
+	margin: 0 5px;
+}
+
+.header-user .header-link {
+	margin: 0 5px;
+}
+
+.header-separator {
+	margin: 0 5px;
+	color: #000;
+	font-size: 16px;
+}
