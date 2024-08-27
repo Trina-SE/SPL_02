@@ -1,6 +1,6 @@
 <div align="center">
   <h1 style="font-size: 3em; color: #2c3e50;">CodeSphere</h1>
-  <img src="pictures_for_readme/CSlogo.png" alt="CodeSphere Logo" style="width: 200px; height: auto; margin: 20px 0;">
+  <img src="CSlogo.png" alt="CodeSphere Logo" style="width: 200px; height: auto; margin: 20px 0;">
 </div>
 
 > ## Overview
